@@ -44,9 +44,12 @@ def sendEmailAlert(rss_items):
     message.attach(MIMEText(email_body, "html"))
 
     # Send the email
-    with smtplib.SMTP(smtp_server, 25) as server:
-        server.sendmail(from_email_address, to_email_address,
-                        message.as_string())
+    if(len(email_body) > 0):
+        with smtplib.SMTP(smtp_server, 25) as server:
+            server.sendmail(from_email_address, to_email_address,
+                            message.as_string())
+    else:
+        print("No new aricles found")
 
 # scraping function
 
