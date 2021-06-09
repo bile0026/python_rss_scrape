@@ -49,7 +49,7 @@ def sendEmailAlert(rss_items):
             server.sendmail(from_email_address, to_email_address,
                             message.as_string())
     else:
-        print("No new aricles found")
+        print("No new articles found")
 
 # scraping function
 
