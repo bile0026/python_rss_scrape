@@ -67,6 +67,8 @@ def scrape_rss():
         r = requests.get(scrape_url)
         soup = BeautifulSoup(r.content, features=url_type)
 
+        # print(soup)
+
         # select only the "items" I want from the data
         articles = soup.findAll('item')
 
